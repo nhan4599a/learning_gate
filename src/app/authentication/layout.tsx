@@ -4,8 +4,8 @@ import { Card, Col, Row } from 'antd'
 const AuthenticationPagesLayout = ({ children }: React.PropsWithChildren) => {
   return (
     <div className={styles.container}>
-      <Row>
-        <Col span={8} offset={8} className='form-container'>
+      <Row type="flex" justify="center" align="middle" style={{minHeight: '100vh'}}>
+        <Col span={8} className='form-container'>
           <Card>
             {children}
           </Card>
