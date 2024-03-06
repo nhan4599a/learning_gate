@@ -37,9 +37,9 @@ const Page = () => {
       </Form.Item>
       <Divider />
       <FormItem>
-      <Button block>
-        <GoogleOutlined /> Log in with Google account
-      </Button>
+        <Button block>
+          <GoogleOutlined /> Log in with Google account
+        </Button>
       </FormItem>
     </Form>
   )
