@@ -7,3 +7,10 @@
     margin-right: 2vw;
 } */
 
+.forgot {
+    float: right;
+}
+
+.login-form-button{
+    width: 100%
+}
