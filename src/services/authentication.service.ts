@@ -1,12 +1,14 @@
 import { env } from "@/env/env";
 import { generateSalt, pbkdf2Hash } from "../common/helper/crypto.helper";
-import { IUserStorage } from "../common/db/storage/user.storage";
+import { type IUserStorage } from "../common/db/storage/user.storage";
 import { combineBuffers } from "../common/helper/encoding.helper";
 import { compare } from "../common/helper/array.helper";
 import { ISignInViewModel } from "@/common/model/authentication";
 import { cookies } from 'next/headers'
 import { IUser } from "../common/db/models/user";
 import { SignJWT, jwtVerify } from "jose";
+import { inject, injectable } from "inversify";
+import { ServiceTypes } from "@/common/dependency-injection/services.types";
 
 export interface IAuthenticationService {
     signIn(model: ISignInViewModel): Promise<boolean>
@@ -14,11 +16,12 @@ export interface IAuthenticationService {
     verifyAccessToken(accessToken: string): Promise<boolean>
 }
 
+@injectable()
 export class AuthenticationService implements IAuthenticationService {
     #userStorage: IUserStorage
     #jwtHashingKey: Uint8Array
 
-    constructor(userStorage: IUserStorage) {
+    constructor(@inject(ServiceTypes.IUserStorage) userStorage: IUserStorage) {
         this.#userStorage = userStorage
         this.#jwtHashingKey = new TextEncoder().encode(env.JWT_HASHING_SECRET_KEY)
     }

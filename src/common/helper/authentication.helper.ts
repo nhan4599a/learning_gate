@@ -1,10 +1,12 @@
-import { AuthenticationService } from "@/services/authentication.service"
-import { UserStorage } from "../db/storage/user.storage"
+import { IAuthenticationService } from "@/services/authentication.service"
 import { ISignInViewModel } from "../model/authentication"
+import DIContainer from "../dependency-injection/container"
+import { ServiceTypes } from "../dependency-injection/services.types"
 
 const getAuthenticationService = () => {
-    const userStorage = new UserStorage()
-    return new AuthenticationService(userStorage)
+    return DIContainer.get<IAuthenticationService>(
+        ServiceTypes.IAuthenticationService
+    )
 }
 
 export const signIn = (signInModel: ISignInViewModel) => {

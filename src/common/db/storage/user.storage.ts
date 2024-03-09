@@ -1,11 +1,13 @@
+import { injectable } from "inversify"
 import DbInstance from "../dbInstance"
 import { IUser } from "../models/user"
 
-export interface IUserStorage {
+interface IUserStorage {
     findUser(userIdentifier: string): Promise<IUser | null>
     addUser(user: IUser): void
 }
 
+@injectable()
 class UserStorage implements IUserStorage {
     #db: DbInstance
 
@@ -29,4 +31,4 @@ class UserStorage implements IUserStorage {
     }
 }
 
-export default UserStorage
+export { type IUserStorage, UserStorage }
