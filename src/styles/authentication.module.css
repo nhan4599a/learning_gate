@@ -1,6 +1,7 @@
 .container {
-    height: 100vh;
-    background-color: #ccc;
+    padding: 40px;
+    min-height: 65vh;
+    max-width: 100%;
 }
 
 /* .form-submit-button {

@@ -1,0 +1,65 @@
+.header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 1010;
+  background-color: #fff !important;
+  position: relative;
+}
+.nav {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0 !important;
+  cursor: pointer
+}
+
+.nav .navlogo{
+  flex-basis: cacl(13.3rem / 2);
+}
+.nav .navoptions {
+  flex-basis: 13.3rem;
+  text-align: center;
+}
+
+.nav .navsearch {
+  flex-basis: calc(13.3rem * 3);
+}
+
+.nav .navcart,
+.nav .navnoti {
+  text-align: right;
+  flex-basis: calc(13.3rem / 3);
+}
+.nav .navcart span svg,
+.nav .navnoti span svg {
+  font-size: 16px;
+}
+.nav .navbtns {
+  text-align: right;
+  flex-basis: 13.3rem;
+}
+
+.content {
+  max-height: calc(100vh - 8rem);
+  
+}
+
+.footer{
+  height: 8rem
+}
+.footer ul {
+  list-style: none;
+  padding: 0;
+  flex-basis: 25.6rem;
+  margin-right: 1.6rem;
+  margin-bottom: 0;
+}
+
+.footerlinks {
+  display: flex !important;
+}
+
+.footer .copyright {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.6rem 0;
+}
