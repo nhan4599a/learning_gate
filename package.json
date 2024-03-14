@@ -10,6 +10,7 @@
     "lint:fix": "eslint \"src/**/*.{js,ts,jsx,tsx}\" --fix"
   },
   "dependencies": {
+    "@ant-design/nextjs-registry": "^1.0.0",
     "@next/font": "14.1.0",
     "@types/inversify": "^2.0.33",
     "@types/node": "20.11.20",
