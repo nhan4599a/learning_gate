@@ -1,5 +1,5 @@
-import { Container } from "inversify"
-import { setup } from "./setup"
+import { Container } from 'inversify'
+import { setup } from './setup'
 
 const DIContainer = new Container()
 
