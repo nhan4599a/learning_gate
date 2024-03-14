@@ -1,4 +1,11 @@
-import "../styles/global.css"
+"use client";
+
+import { Layout} from "antd";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
+import styles from "@/styles/layout.module.css";
+import FixedHeader from "@/components/header";
+import FixedFooter from "@/components/footer";
+const { Header, Content, Footer } = Layout;
 
 const RootLayout = ({ children }: React.PropsWithChildren) => {
   return (
@@ -8,10 +15,18 @@ const RootLayout = ({ children }: React.PropsWithChildren) => {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
-        {children}
+        <AntdRegistry>
+          <Header className={styles.header}>
+            <FixedHeader />
+          </Header>
+          <Content className={styles.content}>{children}</Content>
+          <Footer className={styles.footer}>
+            <FixedFooter />
+          </Footer>
+        </AntdRegistry>
       </body>
     </html>
-  )
-}
+  );
+};
 
-export default RootLayout
+export default RootLayout;

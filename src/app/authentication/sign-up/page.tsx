@@ -40,7 +40,7 @@ const Page = () => {
       <Divider />
       <FormItem>
         Already have an account?
-        <Link href="/authenciation/sign-in"> Log in</Link>
+        <Link href="/authentication/sign-in"> Log in</Link>
       </FormItem>
     </Form>
   )
