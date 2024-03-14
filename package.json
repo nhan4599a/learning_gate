@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "npm run lint && next dev",
+    "build": "npm run lint && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint \"src/**/*.{js,ts,jsx,tsx}\"",
+    "lint:fix": "eslint \"src/**/*.{js,ts,jsx,tsx}\" --fix"
   },
   "dependencies": {
     "@next/font": "14.1.0",
@@ -15,8 +16,6 @@
     "@types/react": "18.2.58",
     "@types/react-dom": "18.2.19",
     "antd": "^5.14.2",
-    "eslint": "8.57.0",
-    "eslint-config-next": "14.1.0",
     "inversify": "^6.0.2",
     "jose": "^5.2.3",
     "mongoose": "^8.2.1",
@@ -24,7 +23,14 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "reflect-metadata": "^0.2.1",
-    "typescript": "5.3.3",
     "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "^1.6.3",
+    "@typescript-eslint/parser": "^7.1.1",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.2",
+    "typescript-eslint": "^7.1.1"
   }
 }

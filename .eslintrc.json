@@ -1,0 +1,80 @@
+{
+  "root": true,
+  "extends": ["eslint:recommended"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": { "project": ["./tsconfig.json"] },
+  "plugins": ["@typescript-eslint", "@stylistic"],
+  "rules": {
+    "curly": "error",
+    "@typescript-eslint/strict-boolean-expressions": [
+      2,
+      {
+        "allowString": false,
+        "allowNumber": false
+      }
+    ],
+    "@stylistic/comma-dangle": ["error", "never"],
+    "@stylistic/array-element-newline": [
+      "error",
+      {
+        "ArrayExpression": "consistent",
+        "ArrayPattern": {
+          "minItems": 3,
+          "multiline": true
+        }
+      }
+    ],
+    "@stylistic/array-bracket-newline": [
+      "error",
+      {
+        "minItems": 3,
+        "multiline": true
+      }
+    ],
+    "@stylistic/array-bracket-spacing": ["error", "always"],
+    "@stylistic/block-spacing": "error",
+    "@stylistic/no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 2
+      }
+    ],
+    "@stylistic/semi": ["error", "never"],
+    "@stylistic/no-extra-semi": "error",
+    "@stylistic/semi-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "@stylistic/arrow-parens": [
+      "error",
+      "as-needed",
+      {
+        "requireForBlockBody": true
+      }
+    ],
+    "@stylistic/jsx-quotes": "error",
+    "@stylistic/function-paren-newline": ["error", { "minItems": 3 }],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "no-var": "error"
+  },
+  "ignorePatterns": ["src/**/*.test.ts"],
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "rules": {
+        "no-undef": "off"
+      }
+    },
+    {
+      "files": [ "*.ts", "*.tsx" ],
+      "rules": {
+        "no-undef": "off",
+        "no-redeclare": "off"
+      }
+    }
+  ]
+}

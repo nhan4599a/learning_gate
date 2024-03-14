@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import { Button, Form, Input, Divider } from "antd"
-import { MailOutlined } from "@ant-design/icons"
-import FormItem from "antd/es/form/FormItem"
-import Link from "next/link"
+import { Button, Form, Input, Divider } from 'antd'
+import { MailOutlined } from '@ant-design/icons'
+import FormItem from 'antd/es/form/FormItem'
+import Link from 'next/link'
 
 const Page = () => {
-  const [form] = Form.useForm()
+  const [ form ] = Form.useForm()
 
   return (
     <Form form={form}>

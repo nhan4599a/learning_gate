@@ -1,6 +1,6 @@
-import Link from "next/link";
-import React from "react";
-import styles from "../styles/layout.module.css";
+import Link from "next/link"
+import React from "react"
+import styles from "../styles/layout.module.css"
 
 const FixedFooter = () => {
   return (
@@ -28,7 +28,7 @@ const FixedFooter = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FixedFooter;
+export default FixedFooter

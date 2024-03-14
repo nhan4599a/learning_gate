@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import { Button, Form, Input, Checkbox, Divider } from "antd"
-import { LockOutlined, UserOutlined, GoogleOutlined } from "@ant-design/icons"
-import styles from "../../../styles/authentication.module.css"
-import FormItem from "antd/es/form/FormItem"
-import Link from "next/link"
+import { Button, Form, Input, Checkbox, Divider } from 'antd'
+import { LockOutlined, UserOutlined, GoogleOutlined } from '@ant-design/icons'
+import styles from '../../../styles/authentication.module.css'
+import FormItem from 'antd/es/form/FormItem'
+import Link from 'next/link'
 
 const Page = () => {
-  const [form] = Form.useForm()
+  const [ form ] = Form.useForm()
 
   return (
     <Form form={form} className="login-form">
@@ -30,10 +30,16 @@ const Page = () => {
       </Form.Item>
 
       <Form.Item>
-        <Button type="primary" htmlType="submit" className="login-form-button" block>
-          Log in  
+        <Button
+          type="primary"
+          htmlType="submit"
+          className="login-form-button"
+          block
+        >
+          Log in
         </Button>
-        Don't have an account?<Link href="/authentication/sign-up"> Sign up</Link>
+        Don't have an account?
+        <Link href="/authentication/sign-up"> Sign up</Link>
       </Form.Item>
       <Divider />
       <FormItem>

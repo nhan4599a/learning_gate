@@ -1,45 +1,51 @@
-import { createConnection, mongo, Query, Connection, Schema, Model } from 'mongoose'
+import {
+  createConnection,
+  mongo,
+  Query,
+  Connection,
+  Model
+} from 'mongoose'
 import { notNullOrEmpty } from '../helper/validation.helper'
 import { IUser, UserSchema } from './models/user'
+import { env } from '@/env/env'
 
 export default class DbInstance {
-    // private field
-    #dbConnection: Connection
-    #dbSession: mongo.ClientSession | undefined
+  // private field
+  #dbConnection: Connection
+  #dbSession: mongo.ClientSession | undefined
 
-    // public property
-    Users: Model<IUser>
+  // public property
+  Users: Model<IUser>
 
-    constructor() {
-        checkEnvVariables()
-        this.#dbConnection = createConnection(process.env.DB_CONNECTION_STRING!)
-        this.Users = this.#dbConnection.model('users', UserSchema)
+  constructor() {
+    checkEnvVariables()
+    this.#dbConnection = createConnection(env.DB_CONNECTION_STRING)
+    this.Users = this.#dbConnection.model('users', UserSchema)
+  }
+
+  async startTransaction() {
+    this.#dbSession = await this.#dbConnection.startSession()
+    this.#dbSession.startTransaction()
+  }
+
+  commitTransaction() {
+    return this.#dbSession?.commitTransaction().then(() => {
+      this.#dbSession?.endSession()
+    })
+  }
+
+  attachTransactionToQuery<TResult, TModel>(query: Query<TResult, TModel>) {
+    if (this.#dbSession === null || this.#dbSession!.hasEnded) {
+      throw new Error('No transaction to attach')
     }
 
-    async startTransaction() {
-        this.#dbSession = await this.#dbConnection.startSession()
-        this.#dbSession.startTransaction()
-    }
-
-    commitTransaction() {
-        return this.#dbSession?.commitTransaction().then(() => {
-            this.#dbSession?.endSession()
-        })
-    }
-
-    attachTransactionToQuery<TResult, TModel>(query: Query<TResult, TModel>) {
-        if (this.#dbSession === null || this.#dbSession!.hasEnded) {
-            throw new Error('No transaction to attach')
-        }
-
-        query.session(this.#dbSession!)
-    }
+    query.session(this.#dbSession!)
+  }
 }
 
 const checkEnvVariables = () => {
-    const isValid = notNullOrEmpty(process.env.DB_CONNECTION_STRING)
+  const isValid = notNullOrEmpty(process.env.DB_CONNECTION_STRING)
 
-    if (!isValid) {
-        throw new Error('db CONNECTION_STRING not found')
-    }
+  if (!isValid)
+    { throw new Error('db CONNECTION_STRING not found') }
 }

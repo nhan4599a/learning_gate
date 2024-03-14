@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import { Layout} from "antd";
-import { AntdRegistry } from "@ant-design/nextjs-registry";
-import styles from "@/styles/layout.module.css";
-import FixedHeader from "@/components/header";
-import FixedFooter from "@/components/footer";
-const { Header, Content, Footer } = Layout;
+import { Layout} from "antd"
+import { AntdRegistry } from "@ant-design/nextjs-registry"
+import styles from "@/styles/layout.module.css"
+import FixedHeader from "@/components/header"
+import FixedFooter from "@/components/footer"
+const { Header, Content, Footer } = Layout
 
 const RootLayout = ({ children }: React.PropsWithChildren) => {
   return (
@@ -26,7 +26,7 @@ const RootLayout = ({ children }: React.PropsWithChildren) => {
         </AntdRegistry>
       </body>
     </html>
-  );
-};
+  )
+}
 
-export default RootLayout;
+export default RootLayout

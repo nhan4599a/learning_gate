@@ -1,53 +1,57 @@
-import styles from "@/styles/layout.module.css";
+import styles from "@/styles/layout.module.css"
 import {
   SearchOutlined,
   ShoppingCartOutlined,
   CaretDownOutlined,
-  BellOutlined,
-} from "@ant-design/icons";
-import Link from "next/link";
-import { Button, Dropdown, Input, Layout, Menu, MenuProps, Space } from "antd";
+  BellOutlined
+} from "@ant-design/icons"
+import Link from "next/link"
+import { Button, Dropdown, Input, MenuProps, Space } from "antd"
+
 const categories: MenuProps["items"] = [
   {
     key: "1",
-    label: <a href="#">1st menu item</a>,
+    label: <a href="#">1st menu item</a>
   },
   {
     key: "2",
-    label: <a href="#">2nd menu item</a>,
+    label: <a href="#">2nd menu item</a>
   },
   {
     key: "3",
-    label: <a href="#">3rd menu item</a>,
-  },
-];
+    label: <a href="#">3rd menu item</a>
+  }
+]
+
 const notifiations: MenuProps["items"] = [
   {
     key: "1",
-    label: <a href="#">1st noti</a>,
+    label: <a href="#">1st noti</a>
   },
   {
     key: "2",
-    label: <a href="#">2nd noti </a>,
+    label: <a href="#">2nd noti </a>
   },
   {
     key: "3",
-    label: <a href="#">3rd menu item</a>,
-  },
-];
+    label: <a href="#">3rd menu item</a>
+  }
+]
+
 const cart: MenuProps["items"] = [
   {
     key: "1",
-    label: <a href="#">1st item</a>,
+    label: <a href="#">1st item</a>
   },
   {
-    type: "divider",
+    type: "divider"
   },
   {
     key: "2",
-    label: <Button type="primary">Checkout</Button>,
-  },
-];
+    label: <Button type="primary">Checkout</Button>
+  }
+]
+
 const FixedHeader = () => {
   return (
     <div className={styles.nav}>
@@ -102,7 +106,7 @@ const FixedHeader = () => {
         </Button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FixedHeader;
+export default FixedHeader

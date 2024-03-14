@@ -1,14 +1,12 @@
-import styles from "../../styles/authentication.module.css"
-import { Card, Col, Row } from "antd"
+import styles from '../../styles/authentication.module.css'
+import { Card, Col, Row } from 'antd'
 
 const AuthenticationPagesLayout = ({ children }: React.PropsWithChildren) => {
   return (
     <div className={styles.container}>
       <Row justify="center" align="middle">
         <Col xs={16} xl={6} className="form-container">
-          <Card>
-            {children}
-          </Card>
+          <Card>{children}</Card>
         </Col>
       </Row>
     </div>
