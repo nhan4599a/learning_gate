@@ -5,6 +5,7 @@
   position: relative;
 }
 .nav {
+  height: 100%;
   display: flex !important;
   align-items: center;
   justify-content: space-between;
@@ -12,7 +13,7 @@
   cursor: pointer
 }
 
-.nav .navlogo{
+.nav .navlogo {
   flex-basis: cacl(13.3rem / 2);
 }
 .nav .navoptions {
@@ -33,14 +34,16 @@
 .nav .navnoti span svg {
   font-size: 16px;
 }
-.nav .navbtns {
+.nav .headerbtns {
   text-align: right;
   flex-basis: 13.3rem;
 }
+.nav .usericon  {
+  margin-right: 0.5rem;
+}
 
 .content {
-  max-height: calc(100vh - 8rem);
-  
+  max-height: calc(100vh - 8rem);  
 }
 
 .footer{
