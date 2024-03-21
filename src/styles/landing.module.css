@@ -1,0 +1,117 @@
+.container {
+  width: 100%;
+  padding: 2rem 2.5rem;
+  justify: center;
+  align: middle;
+  background-color: f0f2f5;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+}
+
+.client {
+  width: 100%;
+  background-color: #f7f9fa;
+  color: #6a6f73;
+  align: middle;
+  justify: center;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.clientlogo {
+  padding: 1rem;
+}
+
+.clientlogo div {
+  margin-right: 1.3rem !important;
+}
+
+.coursetabcontainer {
+  width: 100%;
+  margin-bottom: 2.5rem
+}
+.coursetab,
+.category {
+  width: 100%;
+}
+
+.cardscontainer {
+  /* width: 100%; */
+  display: flex;
+  margin-top: 1.5rem;
+  justify-content: left;
+  gap: 2.5rem;
+  padding: 0 2.5rem
+}
+.cards {
+  width: 15%
+}
+/* .cards img {
+  width: 70%;
+} */
+
+.cardtitle {
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis at the end */
+  width: 100%; /* Set the width */
+}
+
+.videolist {
+  grid-auto-columns: calc((100% - (4 - 1) * 1.6rem) / 4);
+}
+.videoitem {
+  width: 9.5rem;
+}
+
+.topicsection {
+  width: 100%;
+  padding: 0 2.5rem 2.5rem 2.5rem;
+  background-color: #f7f9fa;
+}
+
+.topics {
+  display: flex !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+}
+
+.topicscol {
+  padding-bottom: 1.5rem;
+  width: 25%;
+}
+
+.trendingtopics {
+  padding-bottom: 1rem;
+}
+
+.teachingbannercontainer {
+  width: 100%;
+}
+
+.teachingbanner {
+  display: flex;
+  padding: 0 2.5rem 2.5rem 2.5rem;
+  /* padding: 0 */
+  justify-content: center;
+}
+
+.teachingbanner img {
+  height: 300px;
+  margin-right: 2.5rem;
+}
+
+.teachingbannercontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 25rem;
+  text-align: left;
+}
+
+.textmd {
+  margin-bottom: 1.5rem;
+}

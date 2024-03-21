@@ -43,8 +43,9 @@
 }
 
 .content {
-  max-height: calc(100vh - 8rem);  
+  /* max-height: calc(100vh - 8rem); */
 }
+
 
 .footer{
   height: 8rem
