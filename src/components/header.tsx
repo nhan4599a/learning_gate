@@ -3,11 +3,20 @@ import {
   SearchOutlined,
   ShoppingCartOutlined,
   CaretDownOutlined,
-  BellOutlined
+  BellOutlined,
+  UserOutlined
 } from "@ant-design/icons"
 import Link from "next/link"
-import { Button, Dropdown, Input, MenuProps, Space } from "antd"
+import { 
+  Button,
+  Dropdown,
+  Input,
+  MenuProps,
+  Space
+} from "antd"
+import { useState } from "react"
 
+const username = "Username"
 const categories: MenuProps["items"] = [
   {
     key: "1",
@@ -52,7 +61,24 @@ const cart: MenuProps["items"] = [
   }
 ]
 
+const loggedin: MenuProps["items"] = [
+  {
+    key: "profile",
+    label: <a href="/profile">Profile</a>
+  },
+  {
+    key: "changepassword",
+    label: <a href="#">Change password</a>
+  },
+  {
+    key: "logout",
+    label: <a href="#">Log out</a>
+  }
+]
+
 const FixedHeader = () => {
+  const [ isLoggedIn ] = useState(!false)
+
   return (
     <div className={styles.nav}>
       <div className={styles.navlogo}>Logo</div>
@@ -95,15 +121,27 @@ const FixedHeader = () => {
           </Space>
         </Dropdown>
       </div>
-      <div className={styles.navbtns}>
-        <Button type="default" style={{ marginRight: 30 }}>
-          <Link href="#"></Link>
-          Log in
-        </Button>
-        <Button type="primary">
-          <Link href="#"></Link>
-          Sign up
-        </Button>
+      <div className={isLoggedIn ? "userprofile" : "headerbtns"}>
+        {!isLoggedIn && (
+          <div className={styles.headerbtns}>
+            <Button type="default" style={{ marginRight: 30 }}>
+              <Link href="#">Log in</Link>
+            </Button>
+            <Button type="primary">
+              <Link href="#">Sign up</Link>
+            </Button>
+          </div>
+        )}
+        {isLoggedIn && (
+          <div className={styles.userprofile}>
+            <Dropdown menu={{ items: loggedin }} trigger={ [ "click" ] } placement="bottom" arrow={{pointAtCenter: true}}>
+              <p>
+                <UserOutlined className={styles.usericon}/>
+                {username}
+              </p>
+            </Dropdown>
+          </div>
+        )}
       </div>
     </div>
   )
