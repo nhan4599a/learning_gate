@@ -3,8 +3,8 @@
 import { Layout} from "antd"
 import { AntdRegistry } from "@ant-design/nextjs-registry"
 import styles from "@/styles/layout.module.css"
-import FixedHeader from "@/components/header"
-import FixedFooter from "@/components/footer"
+import FixedHeader from "@/components/Header"
+import FixedFooter from "@/components/Footer"
 const { Header, Content, Footer } = Layout
 
 const RootLayout = ({ children }: React.PropsWithChildren) => {
